@@ -25,6 +25,7 @@ public class LinkedList {
             System.out.print(head.data+" ");
             head = head.next;
         }
+        System.out.println();
 //        if (head ==null){
 //            System.out.println("Empty list");
 //            return;
@@ -32,5 +33,19 @@ public class LinkedList {
 //        do {
 //
 //        }while (head.next!=null);
+    }
+    public Node revers(Node head){
+        Node current = head;
+        Node next;
+        Node prev = null;
+        while (current!=null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+        return head;
+
     }
 }
